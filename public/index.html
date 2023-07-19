@@ -1,0 +1,51 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>g021c1002</title>
+    <link rel="stylesheet" href="./css/index.css">
+</head>
+<body id="mvc">
+    <h1 id="title">COLLABO</h1>
+    <div id="fd">
+        <div id="djs">
+            <form action="" onsubmit="onsubmitButton_Join(); return false;" id="start">
+                <p id="st1">UserName:</p>
+                <input type="text" id="username" placeholder="ニックネーム" autofocus>
+                <br><br>
+                <p id="st1"> RoomName:</p>
+                <input type="text" id="roomname" placeholder="ルームネーム">
+                <br><br>
+                <input  id="go" type="submit" value="チャットルームへGO" />
+            </form>
+        </div>
+        <d id="dcs">
+            <p id="r">ルームネーム</p>
+            <input type="text" id="troomname" readonly="readonly">
+            <p id="c">カメラ</p>
+            <input type="checkbox" id="camera" onclick="onclickCheckbox_CameraMicrophone()">
+            <p id="c">マイク</p>
+            <input type="checkbox" id="mic" onclick="onclickCheckbox_CameraMicrophone()">
+            <br><br>
+            <div id="userinfo">
+                <div>
+                    <input type="text" id="tusername" readonly="readonly"><br>
+                    <video id="videolocal" width="320" height="240" autoplay></video>
+                </div>
+            </div>
+            <form action="" onsubmit="onsubmitButton_SendMessage(); return false;">
+                <input type="text" id="tsend" size="40" >
+                <input type="submit" value="送る" id="send">
+            </form>
+            <br>
+            <textarea id="received" rows="10" cols="60" readonly="readonly"></textarea>
+
+            <br />
+            <button id="leave" onclick="onclickButton_LeaveChat()">チャットを抜ける</button>
+        </div>
+    </div>
+
+    <script src="/socket.io/socket.io.js"></script>
+    <script src="./client.js"></script>
+</body>
+</html>
